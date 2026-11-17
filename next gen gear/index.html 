@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Gear | প্রিমিয়াম ইলেকট্রনিক্স ও গ্যাজেট শপ</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Hind Siliguri & Orbitron) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP Animation & Vanilla Tilt (3D Effect) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #050811;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Neon Glow & Glassmorphism */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.8);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.7), 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-grid">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card border-b border-sky-500/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://i.ibb.co.com/HfS5TM9G/logo.png" alt="Logo" class="w-10 h-10 object-cover rounded-full border border-sky-400/40" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=100&q=80'">
+                <span class="brand-font text-xl md:text-2xl font-extrabold tracking-wider text-sky-400 neon-text">
+                    NEXTGEN<span class="text-white">GEAR</span>
+                </span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#home" class="hover:text-sky-400 transition">হোম</a>
+                <a href="#products" class="hover:text-sky-400 transition">প্রোডাক্টস</a>
+                <a href="#features" class="hover:text-sky-400 transition">কেন আমরাই সেরা?</a>
+            </div>
+            <a href="#products" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-5 py-2 rounded-full transition transform hover:scale-105 shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                অর্ডার করুন
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-24 pb-12 px-6 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="hero-content space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 text-sky-400 text-sm font-semibold">
+                    ⚡ সারা বাংলাদেশে হোম ডেলিভারি এভেইলেবল
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
+                    স্মার্ট লাইফস্টাইলের জন্য <span class="text-sky-400 neon-text">সেরা গ্যাজেট</span> এখন হাতের মুঠোয়!
+                </h1>
+                <p class="text-slate-300 text-lg md:text-xl">
+                    অরিজিনাল পাওয়ার ব্যাংক, ইয়ারবাডস, স্মার্টওয়াচ এবং মোবাইল এক্সেসরিজ—সরাসরি হোয়াটসঅ্যাপ বা মেসেঞ্জারে অর্ডার করুন কোনো ঝামেলা ছাড়াই।
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#products" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.6)] flex items-center gap-2">
+                        <i class="fas fa-bolt"></i> কালেকশন দেখুন
+                    </a>
+                    <button onclick="directChat()" class="glass-card hover:bg-slate-800 text-white font-semibold px-8 py-3.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-green-400 text-xl"></i> সরাসরি কথা বলুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Animated Hero Visual -->
+            <div class="hero-image flex justify-center relative">
+                <div class="w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-dashed border-sky-500/40 flex items-center justify-center animate-[spin_20s_linear_infinite] absolute"></div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" 
+                     alt="Premium Gadget" 
+                     class="w-72 h-72 md:w-80 md:h-80 object-cover rounded-3xl shadow-[0_0_40px_rgba(56,189,248,0.4)] animate-float z-10 border border-sky-400/30">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">আমাদের <span class="text-sky-400 neon-text">জনপ্রিয় প্রোডাক্টস</span></h2>
+            <p class="text-slate-400 text-lg">সারা বাংলাদেশে হোম ডেলিভারি এভেইলেবল! পছন্দের প্রোডাক্টটি বেছে নিন এবং অর্ডার করুন।</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- JavaScript এর মাধ্যমে গুগল শিট থেকে প্রোডাক্টগুলো এখানে লোড হবে -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl text-center space-y-3">
+                <i class="fas fa-shield-alt text-4xl text-sky-400"></i>
+                <h3 class="text-xl font-bold text-white">১০০% অরিজিনাল গ্যাজেট</h3>
+                <p class="text-slate-400">প্রতিটি প্রোডাক্ট কোয়ালিটি চেক করে ডেলিভারি দেওয়া হয়।</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center space-y-3">
+                <i class="fas fa-shipping-fast text-4xl text-sky-400"></i>
+                <h3 class="text-xl font-bold text-white">সারা দেশে হোম ডেলিভারি</h3>
+                <p class="text-slate-400">দ্রুততম সময়ে আপনার ঠিকানায় পণ্য পৌঁছে দেওয়া হয়।</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center space-y-3">
+                <i class="fab fa-whatsapp text-4xl text-green-400"></i>
+                <h3 class="text-xl font-bold text-white">তাৎক্ষণিক কাস্টমার সাপোর্ট</h3>
+                <p class="text-slate-400">যেকোনো প্রয়োজনে সরাসরি হোয়াটসঅ্যাপ ও মেসেঞ্জারে সাপোর্ট পাবেন।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accepted Payment Methods Section -->
+    <section class="py-12 px-6 max-w-7xl mx-auto text-center border-t border-slate-800/80">
+        <h3 class="text-xl font-semibold text-white mb-6">যে পেমেন্ট মেথডগুলোতে পেমেন্ট গ্রহণ করা হয়:</h3>
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-pink-500 font-bold tracking-wide border border-pink-500/30">
+                <i class="fas fa-wallet"></i> বিকাশ (bKash)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-orange-500 font-bold tracking-wide border border-orange-500/30">
+                <i class="fas fa-mobile-alt"></i> নগদ (Nagad)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-purple-400 font-bold tracking-wide border border-purple-500/30">
+                <i class="fas fa-credit-card"></i> রকেট (Rocket)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-emerald-400 font-bold tracking-wide border border-emerald-500/30">
+                <i class="fas fa-university"></i> উপায় (Upay)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-sky-400 font-bold tracking-wide border border-sky-500/30">
+                <i class="fas fa-money-bill-wave"></i> ক্যাশ অন ডেলিভারি
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-400 space-y-2">
+        <p class="brand-font text-lg text-sky-400 mb-1">NEXTGEN GEAR</p>
+        <p class="text-sm">© ২০২৬ সর্বস্বত্ব সংরক্ষিত | দিঘলিয়া, খুলনা</p>
+        <p class="text-xs text-sky-400/80 font-medium">Developed by জিসান</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ==========================================
+        // ১. তোমার কন্টাক্ট সেটিংস
+        // ==========================================
+        const WHATSAPP_NUMBER = "8801984767917"; // তোমার হোয়াটসঅ্যাপ নাম্বার
+        
+        // তোমার গুগল শিট থেকে পাওয়া Published CSV লিংক:
+        const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1jlASOw7sagwq4OUeGqrsCO1E_guWwOS0cwiuI8sqGMY/export?format=csv"; 
+
+        // ==========================================
+        // ২. ডিফল্ট প্রোডাক্ট লিস্ট
+        // ==========================================
+        let products = [
+            {
+                id: 1,
+                name: "Earphone",
+                model: "FRB N-26",
+                price: "regular price 1290 offer price 990",
+                badge: "now available",
+                image: "https://i.ibb.co.com/9Hps9pXF/img-6afc5b3a42d07-1-1794923322.png",
+                desc: "অবিশ্বাস্য ৬০০ ঘণ্টার স্ট্যান্ডবাই ব্যাকআপ এবং লেটেস্ট Bluetooth 5.4 প্রযুক্তির নেকব্যান্ড।"
+            }
+        ];
+
+        // ==========================================
+        // ৩. প্রোডাক্ট কার্ড রেন্ডার ও ডেলিভারি টেবিল ফাংশন
+        // ==========================================
+        function renderProducts(productList) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            productList.forEach(product => {
+                const card = `
+                    <div class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div>
+                            <div class="relative overflow-hidden group h-60">
+                                <span class="absolute top-3 left-3 z-10 bg-sky-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    ${product.badge || 'স্টকে আছে'}
+                                </span>
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">${product.name}</h3>
+                                    <p class="text-xs text-sky-400 font-semibold tracking-wide uppercase mt-1">মডেল: ${product.model || 'N/A'}</p>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">${product.desc}</p>
+                                
+                                <div class="pt-1">
+                                    <span class="text-lg font-extrabold text-sky-400">${product.price}</span>
+                                </div>
+
+                                <!-- Delivery Charge Box (प्रत्येक প্রোডাক্টের নিচে শো করবে) -->
+                                <div class="mt-4 p-3.5 rounded-xl bg-slate-900/80 border border-sky-500/20 text-xs space-y-2">
+                                    <div class="flex items-center justify-between text-sky-300 font-bold border-b border-slate-800 pb-1.5">
+                                        <span><i class="fas fa-truck-fast text-sky-400 mr-1.5"></i> ডেলিভারি চার্জ ও সময়:</span>
+                                        <span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded text-[10px]">সারা দেশ হোম ডেলিভারি</span>
+                                    </div>
+                                    <div class="space-y-1 text-slate-300">
+                                        <div class="flex justify-between">
+                                            <span>🏠 ঢাকা সিটি (Inside Dhaka):</span>
+                                            <span class="font-semibold text-white">১-২ দিন | ৬০ TK</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>🏘️ ঢাকা সাব এরিয়া (Sub Area):</span>
+                                            <span class="font-semibold text-white">১-২ দিন | ১০০ TK</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>🚚 ঢাকার বাইরে (Outside Dhaka):</span>
+                                            <span class="font-semibold text-white">২-৪ দিন | ১২০ TK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Buttons -->
+                        <div class="p-6 pt-0 flex gap-3">
+                            <button onclick="orderWhatsApp('${product.name}', '${product.model}', '${product.price}')" 
+                                class="flex-1 bg-green-500 hover:bg-green-400 text-slate-950 font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+                                <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+                            </button>
+                            <button onclick="orderMessenger('${product.name}', '${product.price}')" 
+                                class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]" title="Messenger-এ অর্ডার করুন">
+                                <i class="fab fa-facebook-messenger text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+
+            VanillaTilt.init(document.querySelectorAll(".product-card"));
+            gsap.from(".product-card", {
+                scrollTrigger: "#product-grid",
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+        }
+
+        // ==========================================
+        // ৪. হোয়াটসঅ্যাপ ও মেসেঞ্জার অর্ডার ফাংশন
+        // ==========================================
+        function orderWhatsApp(name, model, price) {
+            const text = `আসসালামু আলাইকুম! আমি আপনার ওয়েবসাইট থেকে নিচের প্রোডাক্টটি অর্ডার করতে চাই:%0A%0A*প্রোডাক্ট:* ${name}%0A*মডেল:* ${model}%0A*দাম/অফার:* ${price}%0A*ডেলিভারি নিয়ম:* সারা বাংলাদেশে হোম ডেলিভারি চাচ্ছি।%0A%0Aআমার নাম ও ঠিকানা দিচ্ছি:`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        function orderMessenger(name, price) {
+            window.open('https://www.facebook.com/share/1Bxmc4HQBE/', '_blank');
+        }
+
+        function directChat() {
+            const text = `হ্যালো! আমি আপনাদের প্রোডাক্ট ও ডেলিভারি সম্পর্কে জানতে চাচ্ছি।`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        // ==========================================
+        // ৫. গুগল শিট থেকে ডেটা ফেচ করার সিস্টেম
+        // ==========================================
+        async function loadProducts() {
+            if (GOOGLE_SHEET_CSV_URL) {
+                try {
+                    const response = await fetch(GOOGLE_SHEET_CSV_URL);
+                    const data = await response.text();
+                    const rows = data.split('\n').slice(1);
+                    const sheetProducts = rows.filter(r => r.trim() !== '').map((row, index) => {
+                        const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                        const cleanVal = (val) => val ? val.replace(/^"|"$/g, '').trim() : '';
+                        
+                        return {
+                            id: index + 1,
+                            name: cleanVal(cols[0]),
+                            model: cleanVal(cols[1]),
+                            price: cleanVal(cols[2]),
+                            badge: cleanVal(cols[3]),
+                            image: cleanVal(cols[4]),
+                            desc: cleanVal(cols[6]) || cleanVal(cols[5])
+                        };
+                    });
+                    if (sheetProducts.length > 0) products = sheetProducts;
+                } catch (e) {
+                    console.error("Google Sheet লোড হতে সমস্যা হয়েছে, ডিফল্ট প্রোডাক্ট দেখানো হচ্ছে।", e);
+                }
+            }
+            renderProducts(products);
+        }
+
+        gsap.from(".hero-content > *", {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        loadProducts();
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Gear | প্রিমিয়াম ইলেকট্রনিক্স ও গ্যাজেট শপ</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Hind Siliguri & Orbitron) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP Animation & Vanilla Tilt (3D Effect) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #050811;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Neon Glow & Glassmorphism */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.8);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.7), 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-grid">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card border-b border-sky-500/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://i.ibb.co.com/HfS5TM9G/logo.png" alt="Logo" class="w-10 h-10 object-cover rounded-full border border-sky-400/40" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=100&q=80'">
+                <span class="brand-font text-xl md:text-2xl font-extrabold tracking-wider text-sky-400 neon-text">
+                    NEXTGEN<span class="text-white">GEAR</span>
+                </span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#home" class="hover:text-sky-400 transition">হোম</a>
+                <a href="#products" class="hover:text-sky-400 transition">প্রোডাক্টস</a>
+                <a href="#features" class="hover:text-sky-400 transition">কেন আমরাই সেরা?</a>
+            </div>
+            <a href="#products" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-5 py-2 rounded-full transition transform hover:scale-105 shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                অর্ডার করুন
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-24 pb-12 px-6 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] -z-10"></div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="hero-content space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 text-sky-400 text-sm font-semibold">
+                    ⚡ সারা বাংলাদেশে হোম ডেলিভারি এভেইলেবল
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
+                    স্মার্ট লাইফস্টাইলের জন্য <span class="text-sky-400 neon-text">সেরা গ্যাজেট</span> এখন হাতের মুঠোয়!
+                </h1>
+                <p class="text-slate-300 text-lg md:text-xl">
+                    অরিজিনাল পাওয়ার ব্যাংক, ইয়ারবাডস, স্মার্টওয়াচ এবং মোবাইল এক্সেসরিজ—সরাসরি হোয়াটসঅ্যাপ বা মেসেঞ্জারে অর্ডার করুন কোনো ঝামেলা ছাড়াই।
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#products" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.6)] flex items-center gap-2">
+                        <i class="fas fa-bolt"></i> কালেকশন দেখুন
+                    </a>
+                    <button onclick="directChat()" class="glass-card hover:bg-slate-800 text-white font-semibold px-8 py-3.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-green-400 text-xl"></i> সরাসরি কথা বলুন
+                    </button>
+                </div>
+            </div>
+
+            <!-- Animated Hero Visual -->
+            <div class="hero-image flex justify-center relative">
+                <div class="w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-dashed border-sky-500/40 flex items-center justify-center animate-[spin_20s_linear_infinite] absolute"></div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" 
+                     alt="Premium Gadget" 
+                     class="w-72 h-72 md:w-80 md:h-80 object-cover rounded-3xl shadow-[0_0_40px_rgba(56,189,248,0.4)] animate-float z-10 border border-sky-400/30">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">আমাদের <span class="text-sky-400 neon-text">জনপ্রিয় প্রোডাক্টস</span></h2>
+            <p class="text-slate-400 text-lg">সারা বাংলাদেশে হোম ডেলিভারি এভেইলেবল! পছন্দের প্রোডাক্টটি বেছে নিন এবং অর্ডার করুন।</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- JavaScript এর মাধ্যমে গুগল শিট থেকে প্রোডাক্টগুলো এখানে লোড হবে -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl text-center space-y-3">
+                <i class="fas fa-shield-alt text-4xl text-sky-400"></i>
+                <h3 class="text-xl font-bold text-white">১০০% অরিজিনাল গ্যাজেট</h3>
+                <p class="text-slate-400">প্রতিটি প্রোডাক্ট কোয়ালিটি চেক করে ডেলিভারি দেওয়া হয়।</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center space-y-3">
+                <i class="fas fa-shipping-fast text-4xl text-sky-400"></i>
+                <h3 class="text-xl font-bold text-white">সারা দেশে হোম ডেলিভারি</h3>
+                <p class="text-slate-400">দ্রুততম সময়ে আপনার ঠিকানায় পণ্য পৌঁছে দেওয়া হয়।</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center space-y-3">
+                <i class="fab fa-whatsapp text-4xl text-green-400"></i>
+                <h3 class="text-xl font-bold text-white">তাৎক্ষণিক কাস্টমার সাপোর্ট</h3>
+                <p class="text-slate-400">যেকোনো প্রয়োজনে সরাসরি হোয়াটসঅ্যাপ ও মেসেঞ্জারে সাপোর্ট পাবেন।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accepted Payment Methods Section -->
+    <section class="py-12 px-6 max-w-7xl mx-auto text-center border-t border-slate-800/80">
+        <h3 class="text-xl font-semibold text-white mb-6">যে পেমেন্ট মেথডগুলোতে পেমেন্ট গ্রহণ করা হয়:</h3>
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-pink-500 font-bold tracking-wide border border-pink-500/30">
+                <i class="fas fa-wallet"></i> বিকাশ (bKash)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-orange-500 font-bold tracking-wide border border-orange-500/30">
+                <i class="fas fa-mobile-alt"></i> নগদ (Nagad)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-purple-400 font-bold tracking-wide border border-purple-500/30">
+                <i class="fas fa-credit-card"></i> রকেট (Rocket)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-emerald-400 font-bold tracking-wide border border-emerald-500/30">
+                <i class="fas fa-university"></i> উপায় (Upay)
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl flex items-center gap-2 text-sky-400 font-bold tracking-wide border border-sky-500/30">
+                <i class="fas fa-money-bill-wave"></i> ক্যাশ অন ডেলিভারি
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-400 space-y-2">
+        <p class="brand-font text-lg text-sky-400 mb-1">NEXTGEN GEAR</p>
+        <p class="text-sm">© ২০২৬ সর্বস্বত্ব সংরক্ষিত | দিঘলিয়া, খুলনা</p>
+        <p class="text-xs text-sky-400/80 font-medium">Developed by জিসান</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ==========================================
+        // ১. তোমার কন্টাক্ট সেটিংস
+        // ==========================================
+        const WHATSAPP_NUMBER = "8801984767917"; // তোমার হোয়াটসঅ্যাপ নাম্বার
+        
+        // তোমার গুগল শিট থেকে পাওয়া Published CSV লিংক:
+        const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1jlASOw7sagwq4OUeGqrsCO1E_guWwOS0cwiuI8sqGMY/export?format=csv"; 
+
+        // ==========================================
+        // ২. ডিফল্ট প্রোডাক্ট লিস্ট
+        // ==========================================
+        let products = [
+            {
+                id: 1,
+                name: "Earphone",
+                model: "FRB N-26",
+                price: "regular price 1290 offer price 990",
+                badge: "now available",
+                image: "https://i.ibb.co.com/9Hps9pXF/img-6afc5b3a42d07-1-1794923322.png",
+                desc: "অবিশ্বাস্য ৬০০ ঘণ্টার স্ট্যান্ডবাই ব্যাকআপ এবং লেটেস্ট Bluetooth 5.4 প্রযুক্তির নেকব্যান্ড।"
+            }
+        ];
+
+        // ==========================================
+        // ৩. প্রোডাক্ট কার্ড রেন্ডার ও ডেলিভারি টেবিল ফাংশন
+        // ==========================================
+        function renderProducts(productList) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            productList.forEach(product => {
+                const card = `
+                    <div class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div>
+                            <div class="relative overflow-hidden group h-60">
+                                <span class="absolute top-3 left-3 z-10 bg-sky-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    ${product.badge || 'স্টকে আছে'}
+                                </span>
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">${product.name}</h3>
+                                    <p class="text-xs text-sky-400 font-semibold tracking-wide uppercase mt-1">মডেল: ${product.model || 'N/A'}</p>
+                                </div>
+                                <p class="text-slate-400 text-sm leading-relaxed">${product.desc}</p>
+                                
+                                <div class="pt-1">
+                                    <span class="text-lg font-extrabold text-sky-400">${product.price}</span>
+                                </div>
+
+                                <!-- Delivery Charge Box (प्रत्येक প্রোডাক্টের নিচে শো করবে) -->
+                                <div class="mt-4 p-3.5 rounded-xl bg-slate-900/80 border border-sky-500/20 text-xs space-y-2">
+                                    <div class="flex items-center justify-between text-sky-300 font-bold border-b border-slate-800 pb-1.5">
+                                        <span><i class="fas fa-truck-fast text-sky-400 mr-1.5"></i> ডেলিভারি চার্জ ও সময়:</span>
+                                        <span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded text-[10px]">সারা দেশ হোম ডেলিভারি</span>
+                                    </div>
+                                    <div class="space-y-1 text-slate-300">
+                                        <div class="flex justify-between">
+                                            <span>🏠 ঢাকা সিটি (Inside Dhaka):</span>
+                                            <span class="font-semibold text-white">১-২ দিন | ৬০ TK</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>🏘️ ঢাকা সাব এরিয়া (Sub Area):</span>
+                                            <span class="font-semibold text-white">১-২ দিন | ১০০ TK</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>🚚 ঢাকার বাইরে (Outside Dhaka):</span>
+                                            <span class="font-semibold text-white">২-৪ দিন | ১২০ TK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Buttons -->
+                        <div class="p-6 pt-0 flex gap-3">
+                            <button onclick="orderWhatsApp('${product.name}', '${product.model}', '${product.price}')" 
+                                class="flex-1 bg-green-500 hover:bg-green-400 text-slate-950 font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+                                <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+                            </button>
+                            <button onclick="orderMessenger('${product.name}', '${product.price}')" 
+                                class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]" title="Messenger-এ অর্ডার করুন">
+                                <i class="fab fa-facebook-messenger text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+
+            VanillaTilt.init(document.querySelectorAll(".product-card"));
+            gsap.from(".product-card", {
+                scrollTrigger: "#product-grid",
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+        }
+
+        // ==========================================
+        // ৪. হোয়াটসঅ্যাপ ও মেসেঞ্জার অর্ডার ফাংশন
+        // ==========================================
+        function orderWhatsApp(name, model, price) {
+            const text = `আসসালামু আলাইকুম! আমি আপনার ওয়েবসাইট থেকে নিচের প্রোডাক্টটি অর্ডার করতে চাই:%0A%0A*প্রোডাক্ট:* ${name}%0A*মডেল:* ${model}%0A*দাম/অফার:* ${price}%0A*ডেলিভারি নিয়ম:* সারা বাংলাদেশে হোম ডেলিভারি চাচ্ছি।%0A%0Aআমার নাম ও ঠিকানা দিচ্ছি:`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        function orderMessenger(name, price) {
+            window.open('https://www.facebook.com/share/1Bxmc4HQBE/', '_blank');
+        }
+
+        function directChat() {
+            const text = `হ্যালো! আমি আপনাদের প্রোডাক্ট ও ডেলিভারি সম্পর্কে জানতে চাচ্ছি।`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+        }
+
+        // ==========================================
+        // ৫. গুগল শিট থেকে ডেটা ফেচ করার সিস্টেম
+        // ==========================================
+        async function loadProducts() {
+            if (GOOGLE_SHEET_CSV_URL) {
+                try {
+                    const response = await fetch(GOOGLE_SHEET_CSV_URL);
+                    const data = await response.text();
+                    const rows = data.split('\n').slice(1);
+                    const sheetProducts = rows.filter(r => r.trim() !== '').map((row, index) => {
+                        const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                        const cleanVal = (val) => val ? val.replace(/^"|"$/g, '').trim() : '';
+                        
+                        return {
+                            id: index + 1,
+                            name: cleanVal(cols[0]),
+                            model: cleanVal(cols[1]),
+                            price: cleanVal(cols[2]),
+                            badge: cleanVal(cols[3]),
+                            image: cleanVal(cols[4]),
+                            desc: cleanVal(cols[6]) || cleanVal(cols[5])
+                        };
+                    });
+                    if (sheetProducts.length > 0) products = sheetProducts;
+                } catch (e) {
+                    console.error("Google Sheet লোড হতে সমস্যা হয়েছে, ডিফল্ট প্রোডাক্ট দেখানো হচ্ছে।", e);
+                }
+            }
+            renderProducts(products);
+        }
+
+        gsap.from(".hero-content > *", {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        loadProducts();
+    </script>
+</body>
+</html>
